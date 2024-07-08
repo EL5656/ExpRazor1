@@ -25,4 +25,12 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+//Create API
+app.MapGet("/products", (JsonFileProductService productService) =>
+{
+    var products = productService.GetProducts();
+    return Results.Ok(products);
+});
+
+
 app.Run();
