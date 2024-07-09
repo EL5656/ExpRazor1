@@ -26,6 +26,7 @@ Focus on Controller and Service Layer
 https://localhost:7129/products/rate?ProductId=jenlooper-cactus&Rating=7
 
 Create folder Components ->Razor Component -> name as ProductList.razor
+
 In Index.cshtml add code
 
 
