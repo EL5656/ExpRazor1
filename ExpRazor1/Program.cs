@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<JsonFileProductService>();//new line added
+builder.Services.AddControllers();//Add controllers
 
 var app = builder.Build();
 
@@ -24,13 +25,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
-//Create API
-app.MapGet("/products", (JsonFileProductService productService) =>
-{
-    var products = productService.GetProducts();
-    return Results.Ok(products);
-});
-
+app.MapControllers();//add controller
 
 app.Run();
